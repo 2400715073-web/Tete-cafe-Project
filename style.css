@@ -1,0 +1,254 @@
+/* Remove browser's default spacing and make elements easier to size */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Includes padding & border inside width/height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; /* Improves text readability */
+
+}
+/* NAVIGATION BAR */
+
+/* Style the logo image inside the navbar */
+.logo img {
+  max-width: 85px; /* Prevents logo from getting too big */
+  height: auto;     /* Maintains natural aspect ratio */
+}
+.logo img{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+
+}
+/* Navigation container styles */
+.nav{
+  background-color:maroon; /* Brand color for navbar background */
+  padding: 15px 20px;       /* Adds breathing space inside navbar */
+  display: flex;            /* Align logo and links side-by-side */
+  justify-content: end; /* Logo goes left, links go right */
+  align-items: center;      
+  flex-wrap: wrap;          /* Allows nav items to stack on small screens */
+  text-align: right;
+
+}
+/* Style the navigation links container */
+.nav ul{
+  display: flex;        /* Arrange links horizontally */
+  gap: 20px;            /* Space between links */
+  list-style: none;     /* Remove bullet points from list */
+  
+
+}
+/* Style for each individual nav link */
+.nav a{
+  color: white;                 /* White text for contrast on maroon background */
+  text-decoration: none;       /* Remove underlines */
+  padding: 8px 12px;           /* Space around each link */
+  transition: background 0.3s; /* Smooth effect when hovering */
+}
+/* Visual feedback when hovering over nav links */  
+.nav a:hover {
+  background-color:white; /* Background becomes white */
+  color: maroon;           /* Text becomes maroon for contrast */
+  border-radius: 4px;      /* Rounded corners on hover */
+}
+/*  HERO SECTION */
+
+/* Large background image section with intro text */
+main.content {
+  position: relative;
+  background-image: url(images/minimalist-decor-cafe-design-1200x673.webp); /* Hero background image */
+  background-size: cover;     /* Cover entire container */
+  background-position: center;/* Keep image centered */
+  padding: 120px 20px;        /* Space inside the hero section */
+  color:solid black;
+  min-height: 550px;          /* Set minimum height of image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* Add a dark overlay on top of the background image for better text visibility */
+main.content::before{
+    content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color:  black; /* Semi-transparent black */
+  z-index: -1; /* Push behind the text */
+
+}
+/* Container for hero text */
+.intro h1 {
+  font-size: 52px;
+  font-weight: bold;
+  color: solid black; /* black for emphasis */
+  margin-bottom: 20px;
+}
+/* Supporting paragraph text */
+.intro p {
+  font-size: 20px;
+  margin-bottom: 20px;  
+}
+/* Button that links to menu */
+.btn {
+     display: inline-block;
+     padding: 14px 28px;
+     background-color: rgb(197, 195, 195); /* Bright yellow button */
+     color: maroon;
+     border-radius: 6px;
+     font-weight: bold;
+     font-size: 20px;
+     text-decoration: none;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+     transition: all 0.3s ease;
+}
+/*PRODUCTS SECTION (Home Products) */
+
+/* Outer section for the product showcase */
+.home-product{
+ padding: 60px 20px;
+ background-color: #fff8f0; /* Soft beige background */
+ text-align: center;
+
+}
+/* Section heading */
+.home-product h2{
+ font-size: 32px;
+margin-bottom: 40px;
+color: maroon;
+
+}
+/* Container that holds all menu-cards */
+.menu-grid{
+display: flex;
+justify-content: center;
+gap: 30px;
+flex-wrap: wrap; /* Make it responsive */
+}
+/* Individual menu card box */
+.menu-card{
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 280px;
+  box-shadow: 0 4px 8px black; /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+
+}
+/* Slight lift when hovering over a card */
+.menu-card:hover {
+    transform: translatey(-5px);
+}
+/* menu image inside each card  */
+.menu-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Keeps image ratio and fills area */
+  border-radius: 8px;
+  margin-bottom: 15px;
+
+}
+/* Product title */
+.menu-card h3{
+    font-size: 18px;
+    color: maroon;
+    font-family: 'Trebuchet MS';
+
+}
+/* --FOOTER SECTION (Bottom of Page)--*/
+
+/* Entire footer styling */
+footer{
+  background-color: #4b0000; /* Deep maroon for contrast */
+  color: white;
+  padding: 50px 30px;
+
+}
+/* Layout for top part of footer (4 sections) */
+.footer-top{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 20px;
+
+}
+/* Common styles for each footer section */
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
+} 
+/* Logo in the footer centered */
+.footer-section about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.footer-section.about img{
+  width: 100px;
+  max-width: 100%;
+  border-radius: 1px;
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.3); /* Glow effect */
+
+} 
+/* Footer section titles */
+.footer-section h4 {
+  color: #ffcc70;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 6000;
+}
+/* Unordered lists like contacts and quick links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+/* Each footer list item (e.g., contact or link) */
+.footer-section ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+/* Icons in footer (e.g., phone, email) */
+.footer-section img {
+  margin-right: 10px;
+  width: 30px;
+}
+/* Footer links */
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+/* Footer link hover style */
+.footer-section a:hover {
+  color: #ffcc70;
+  text-decoration: underline;
+} 
+/* Social media icons */
+.social-icons img {
+  width: 30px;
+  margin-right: 10px;
+} 
+/* Business name below social links */
+.footer-section p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffd700;
+}
+/* Bottom copyright section */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #800000;
+  padding-top: 20px;
+  font-size: 15px;
+  color: #e0e0e0;
+} 
+
+
+
+
